@@ -24,3 +24,15 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+
+
+const element = document.querySelector("ul");
+images.forEach(image => {
+  element.insertAdjacentHTML("beforeend", `<li class = picture><img 
+   width = 380px height = 300px src = ${image.url} alt = ${image.alt} class = ${"image"}</li>`);
+})
+console.log(element);
+
+
+

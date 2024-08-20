@@ -4,20 +4,38 @@ document.head.insertAdjacentHTML("beforeend", `<link rel="preconnect" href="http
 const registerForm = document.querySelector(".login-form");
 const email = document.querySelector('[name="email"]');
 const pwd = document.querySelector('[name="password"]');
+const btn = document.querySelector("button");
 registerForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const form = event.target;
     const userEmail = form.elements.email.value.trim();
     const userPwd = form.elements.password.value.trim();
-    if (userEmail === "" || userPwd === "") {
-        alert('All form fields must be filled in');
-    }
+    let hasError = false;
+   if(userEmail === "" || userPwd === "") {
+        email.style.borderColor = "red";
+       pwd.style.borderColor = "red";
+       alert('All form fields must be filled in');
+   }
     else {
         console.log({ email: userEmail, password: userPwd });
-    }
-    form.reset();
+        form.reset();
+   }
 });
+
+email.addEventListener("focus", (event) => {
+    email.style.borderColor = "green";
+});
+
+pwd.addEventListener("focus", (event) => {
+    pwd.style.borderColor = "green";
+});
+
+
 const label = document.querySelectorAll("label");
 label.forEach(label => {
     label.classList.add("labels");
-})
+});
+
+registerForm.insertAdjacentHTML("beforebegin", `<div class = "form-container"></div>`);
+const container = document.querySelector(".form-container");
+container.appendChild(registerForm);

@@ -13,10 +13,22 @@ body {
   line-height: 1.5;
 }
 
+.ul-wrapper {
+  border-radius: 8px;
+  padding: 24px;
+  width: 500px;
+  border: 1px solid #808080;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+}
+
 #categories {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 .item {
@@ -58,6 +70,7 @@ body {
   padding: 16px;
   width: 392px;
   background-color: #f6f6fe;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .gallery {
@@ -86,6 +99,7 @@ body {
   height: 136px;
   background-color: #f6f6fe;
   border: 1px solid #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #name-input {
@@ -116,14 +130,7 @@ h1 {
   color: #2e2f42;
   margin-top: 16px;
 }
-.error-message {
-  color: red;
-  font-family: 'Montserrat', sans-serif;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.9s ease, visibility 0.9s ease;
-  margin-top: 5px;
-}
+
 .login-form {
   max-width: 360px;
   display: flex;
@@ -148,6 +155,7 @@ input {
   outline: none;
   border-color: #808080;
 }
+
 button {
   margin-top: 8px;
   border-radius: 8px;
@@ -161,6 +169,12 @@ button {
   letter-spacing: 0.04em;
   color: #fff;
   cursor: pointer;
+  transition: background-color 0.6s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #6c8cff;
 }
 
 .form-container {
@@ -191,6 +205,12 @@ button {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.04em;
+  transition: background-color 0.6s ease;
+}
+
+.change-color:hover,
+.change-color:focus {
+  background-color: #6c8cff;
 }
 
 .color {
@@ -200,6 +220,16 @@ button {
   font-size: 16px;
   line-height: 150%;
   letter-spacing: 0.04em;
+}
+
+.main-div {
+  border-radius: 8px;
+  padding: 24px;
+  width: 534px;
+  height: 302px;
+  border: 1px solid #808080;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .boxes-container {
@@ -246,13 +276,22 @@ button {
   color: #fff;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.6s ease, transform 0.6s ease;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.05);
+  background: #6c8cff;
 }
 
 .destroy-btn {
   background-color: #ff4e4e;
 }
 
-[data-box='box'] {
-  width: 30px;
-  height: 30px;
+.destroy-btn:hover,
+.destroy-btn:focus {
+  transform: scale(1.05);
+  background-color: #ff7070;
 }

@@ -3,10 +3,15 @@ document.head.insertAdjacentHTML("beforeend", `<link rel="preconnect" href="http
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">`)
 
 const controls = document.querySelector('#controls');
-  const mainInput = document.querySelector('input[type="number"]');
-  const createBtn = controls.querySelector('button[data-create]');
-  const destroyBtn = controls.querySelector('button[data-destroy]');
-  const boxesContainer = document.querySelector('#boxes');
+const mainInput = document.querySelector('input[type="number"]');
+const createBtn = controls.querySelector('button[data-create]');
+const destroyBtn = controls.querySelector('button[data-destroy]');
+const boxesContainer = document.querySelector('#boxes');
+const p = document.querySelector("p");
+const wrapperDiv = document.createElement("div");
+wrapperDiv.classList.add("main-div");
+p.insertAdjacentElement("afterend", wrapperDiv);
+wrapperDiv.append(controls, boxesContainer);
 
 controls.classList.add("container");
 mainInput.classList.add("main-input");
@@ -17,33 +22,32 @@ boxesContainer.classList.add("boxes-container");
 createBtn.addEventListener("click", (event) => {
   boxesContainer.innerHTML = '';
   const numberOfBoxes = parseInt(mainInput.value);
-  const baseWidth = 30;
-  const baseHeight = 30;
+
   if (numberOfBoxes >= 1 && numberOfBoxes <= 100) {
     for (let i = 0; i < numberOfBoxes; i++) {
-   const boxEl = document.createElement("div");
-      boxEl.setAttribute('data-box', 'box');
-      const currentWidth = baseWidth + (i * 10);
-      const currentHeight = baseHeight + (i * 10);
-      boxEl.style.width = `${currentWidth}px`;
-      boxEl.style.height = `${currentHeight}px`;
-      boxEl.style.backgroundColor = getRandomHexColor();
-      boxesContainer.append(boxEl);
-      mainInput.value = '';
+       const boxEl = document.createElement("div");
+       const size = 30 + (i * 10);
+       boxEl.style.width = `${size}px`;
+       boxEl.style.height = `${size}px`;
+       boxEl.style.backgroundColor = getRandomHexColor();
+       boxesContainer.append(boxEl);
+       mainInput.value = '';
     }
- }
+  }
+  else {
+      alert('Please enter a number between 1 and 100');
+    }
 })
 
 function destroyBoxes () {
 boxesContainer.innerHTML = '';
-  mainInput.value = '';
+mainInput.value = '';
 };
 
 destroyBtn.addEventListener("click", destroyBoxes);
 
-
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
-    .padStart(6, 0)}`;
-}
+    .padStart(6, 0)}`; 
+};

@@ -12,15 +12,7 @@ const title = document.querySelector("h1");
 const wrapper = document.createElement("div");
 wrapper.className = "input-wrapper";
 input.insertAdjacentElement('beforebegin', wrapper);
-
-wrapper.appendChild(input);
-wrapper.appendChild(title);
-
-document.querySelector("h1").insertAdjacentHTML("afterend", 
-    `<p class="error-message">Ім'я має починатися з великої літери та не містити цифри</p>`
-);
-
-const errorMessage = document.querySelector(".error-message");
+wrapper.append(input, title);
 
 const validateName = (name) => /^[A-Z][a-z]*$/.test(name);
 
@@ -28,12 +20,19 @@ const updateStyles = () => {
     const trimmedValue = input.value.trim();
     const isValid = validateName(trimmedValue);
     span.textContent = trimmedValue || "Anonymous";
-
-    const errorVisible = !isValid && trimmedValue;
     input.style.borderColor = isValid ? "green" : "red";
-    input.style.boxShadow = isValid ? "none" : "0 0 8px rgba(128, 128, 128, 0.6)";
-    errorMessage.style.opacity = errorVisible ? "1" : "0";
-    errorMessage.style.visibility = errorVisible ? "visible" : "hidden";
+
+     if (!isValid && trimmedValue !== "") {
+        clearTimeout(window.alertTimeout);
+        window.alertTimeout = setTimeout(() => {
+            alert('Name must start with a capital letter and contain only letters.');
+        }, 1000); 
+     }
+     
+     else {
+        clearTimeout(window.alertTimeout);
+    }
+    console.log({ name: `${span.textContent}` });
 };
 
 input.addEventListener("input", updateStyles);

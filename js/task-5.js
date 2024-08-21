@@ -6,10 +6,8 @@ document.head.insertAdjacentHTML("beforeend", `<link rel="preconnect" href="http
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
 `);
 
-const widget = document.querySelector(".widget");
 const span = document.querySelector(".color");
 const btn = document.querySelector(".change-color");
-const body = document.querySelector("body");
 btn.addEventListener("click", (event)=> {
   document.body.style.backgroundColor = getRandomHexColor();
   span.textContent = document.body.style.backgroundColor;

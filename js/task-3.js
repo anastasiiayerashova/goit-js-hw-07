@@ -14,17 +14,8 @@ wrapper.className = "input-wrapper";
 input.insertAdjacentElement('beforebegin', wrapper);
 wrapper.append(input, title);
 
-
-
-
 input.addEventListener("input",(event) => {
     const trimmedValue = input.value.trim();
     span.textContent = trimmedValue || "Anonymous";
     console.log({ name: `${span.textContent}` });
 });
-
-
-
-
-
-

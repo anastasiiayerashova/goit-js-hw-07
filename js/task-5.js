@@ -8,6 +8,7 @@ document.head.insertAdjacentHTML("beforeend", `<link rel="preconnect" href="http
 
 const span = document.querySelector(".color");
 const btn = document.querySelector(".change-color");
+
 btn.addEventListener("click", (event)=> {
   document.body.style.backgroundColor = getRandomHexColor();
   span.textContent = document.body.style.backgroundColor;

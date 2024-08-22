@@ -19,25 +19,32 @@ createBtn.classList.add("btn");
 destroyBtn.classList.add("btn", "destroy-btn");
 boxesContainer.classList.add("boxes-container");
 
-createBtn.addEventListener("click", (event) => {
-  boxesContainer.innerHTML = '';
+
+
+function createBoxes() {
+   boxesContainer.innerHTML = '';
   const numberOfBoxes = parseInt(mainInput.value);
 
   if (numberOfBoxes >= 1 && numberOfBoxes <= 100) {
+     const fragment = document.createDocumentFragment();
     for (let i = 0; i < numberOfBoxes; i++) {
        const boxEl = document.createElement("div");
        const size = 30 + (i * 10);
        boxEl.style.width = `${size}px`;
        boxEl.style.height = `${size}px`;
        boxEl.style.backgroundColor = getRandomHexColor();
-       boxesContainer.append(boxEl);
-       mainInput.value = '';
+       fragment.append(boxEl);
+        mainInput.value = '';
     }
+    boxesContainer.append(fragment);
+
   }
   else {
       alert('Please enter a number between 1 and 100');
     }
-})
+}
+
+createBtn.addEventListener("click", createBoxes);
 
 function destroyBoxes () {
 boxesContainer.innerHTML = '';

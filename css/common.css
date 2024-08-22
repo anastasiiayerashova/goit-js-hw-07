@@ -217,7 +217,7 @@ button:focus {
   border-radius: 8px;
   padding: 24px;
   width: 534px;
-  height: 302px;
+  min-height: 302px;
   border: 1px solid #808080;
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -227,10 +227,11 @@ button:focus {
   border-radius: 8px;
   padding: 32px;
   width: 486px;
-  height: 134px;
+  min-height: 134px;
   background-color: #f6f6fe;
   display: flex;
-  gap: 44px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .container {
@@ -243,6 +244,10 @@ button:focus {
   background-color: #f6f6fe;
   justify-content: center;
   margin-bottom: 16px;
+}
+
+.boxes-container div {
+  flex-shrink: 0;
 }
 
 .main-input {

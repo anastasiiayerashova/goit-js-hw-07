@@ -7,10 +7,6 @@ document.head.insertAdjacentHTML("beforeend", `<link rel="preconnect" href="http
 `);
 
 const ul = document.querySelector("#categories");
-const ulWrapper = document.createElement("div");
-ulWrapper.className = "ul-wrapper";
-ul.insertAdjacentElement("beforebegin", ulWrapper);
-ulWrapper.append(ul);
 const items = document.querySelectorAll("li.item");
 
 console.log(`Number of categories: ${items.length}`);

@@ -13,22 +13,13 @@ body {
   line-height: 1.5;
 }
 
-.ul-wrapper {
-  border-radius: 8px;
-  padding: 24px;
-  width: 500px;
-  border: 1px solid #808080;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
-}
-
 #categories {
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin: 0;
-  padding: 0;
+  padding: 24px;
+  width: 440px;
 }
 
 .item {

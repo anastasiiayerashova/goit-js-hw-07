@@ -14,28 +14,16 @@ wrapper.className = "input-wrapper";
 input.insertAdjacentElement('beforebegin', wrapper);
 wrapper.append(input, title);
 
-const validateName = (name) => /^[A-Z][a-z]*$/.test(name);
 
-const updateStyles = () => {
+
+
+input.addEventListener("input",(event) => {
     const trimmedValue = input.value.trim();
-    const isValid = validateName(trimmedValue);
     span.textContent = trimmedValue || "Anonymous";
-    input.style.borderColor = isValid ? "green" : "red";
-
-     if (!isValid && trimmedValue !== "") {
-        clearTimeout(window.alertTimeout);
-        window.alertTimeout = setTimeout(() => {
-            alert('Name must start with a capital letter and contain only letters.');
-        }, 1000); 
-     }
-     
-     else {
-        clearTimeout(window.alertTimeout);
-    }
     console.log({ name: `${span.textContent}` });
-};
+});
 
-input.addEventListener("input", updateStyles);
+
 
 
 

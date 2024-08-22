@@ -7,6 +7,7 @@ const email = document.querySelector('[name="email"]');
 const pwd = document.querySelector('[name="password"]');
 const btn = document.querySelector("button");
 const label = document.querySelectorAll("label");
+
 label.forEach(label => {
   label.classList.add("labels");
 });

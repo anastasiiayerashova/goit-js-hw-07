@@ -216,7 +216,7 @@ button:focus {
 .main-div {
   border-radius: 8px;
   padding: 24px;
-  width: 534px;
+  width: 100%;
   min-height: 302px;
   border: 1px solid #808080;
   background-color: #fff;
@@ -226,7 +226,7 @@ button:focus {
 .boxes-container {
   border-radius: 8px;
   padding: 32px;
-  width: 486px;
+  width: 100%;
   min-height: 134px;
   background-color: #f6f6fe;
   display: flex;
@@ -239,8 +239,8 @@ button:focus {
   gap: 16px;
   border-radius: 8px;
   padding: 32px;
-  width: 486px;
-  height: 104px;
+  width: 100%;
+  min-height: 104px;
   background-color: #f6f6fe;
   justify-content: center;
   margin-bottom: 16px;

@@ -20,9 +20,8 @@ destroyBtn.classList.add("btn", "destroy-btn");
 boxesContainer.classList.add("boxes-container");
 
 
-
 function createBoxes() {
-   boxesContainer.innerHTML = '';
+  boxesContainer.innerHTML = '';
   const numberOfBoxes = parseInt(mainInput.value);
 
   if (numberOfBoxes >= 1 && numberOfBoxes <= 100) {
@@ -39,6 +38,7 @@ function createBoxes() {
     boxesContainer.append(fragment);
 
   }
+
   else {
       alert('Please enter a number between 1 and 100');
     }

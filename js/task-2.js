@@ -27,8 +27,10 @@ const images = [
 
 const element = document.querySelector("ul");
 let htmlString = "";
+
 images.forEach(image => {
   htmlString += `<li><img 
    width = "380" height = "300" src = "${image.url}" alt = "${image.alt}" class = "image" /></li>`;
 });
+
 element.insertAdjacentHTML("beforeend", htmlString);
